@@ -1,0 +1,20 @@
+{
+  "name": "FunkyTabs",
+  "version": "1.0.2",
+  "manifest_version": 3,
+  "description": "Makes your NewTab page a bit more funky.",
+  "homepage_url": "https://github.com/AlfieRan/FunkyTabs",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "default_locale": "en",
+  "chrome_url_overrides": {
+    "newtab": "src/override/override.html"
+  },
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "src/popup.html"
+  }
+}

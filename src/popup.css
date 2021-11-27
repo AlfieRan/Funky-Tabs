@@ -1,0 +1,35 @@
+:root {
+  --light: #f7f7f7;
+  --dark: #252525;
+  --med: #ffffff;
+
+  --foreground: var(--light);
+  --background: var(--dark);
+
+  --fontStack: "IBM Plex Mono", "Input Mono", "SF Mono", Consolas, monospace;
+}
+
+* {
+  box-sizing: border-box;
+  font: inherit;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+html {
+  background-color: var(--background);
+  color: var(--foreground);
+  display: flex;
+  line-height: 1.75;
+  transition-property: background-color, color;
+  transition: 0.1s ease;
+  overflow: hidden;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.Pgreeting {
+  font-size: 200%;
+  color: var(--light);
+}

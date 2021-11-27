@@ -1,0 +1,150 @@
+:root {
+  --light: #f7f7f7;
+  --dark: #252525;
+  --med: #ffffff;
+
+  --foreground: var(--light);
+  --background: var(--dark);
+
+  --fontStack: "IBM Plex Mono", "Input Mono", "SF Mono", Consolas, monospace;
+}
+
+* {
+  box-sizing: border-box;
+  font: inherit;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+html {
+  background-color: var(--background);
+  color: var(--foreground);
+  display: flex;
+  font-size: 150%;
+  height: 100%;
+  line-height: 1.75;
+  transition-property: background-color, color;
+  transition: 0.1s ease;
+  overflow: hidden;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground: var(--light);
+    --background: var(--dark);
+  }
+}
+
+body {
+  --column-width: 175ch;
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 var(--column-width);
+  height: 100%;
+  margin: auto;
+  padding-bottom: 0;
+}
+
+.greeting {
+  color: var(--med);
+  font-family: var(--fontStack);
+  margin-bottom: 0.75rem;
+  margin-top: -8vmin;
+  font-size: 4vmin;
+  z-index: 1;
+  text-align: center;
+}
+
+.time {
+  color: var(--med);
+  font-family: var(--fontStack);
+  margin-top: 0vh;
+  margin-bottom: 0;
+  font-size: 15vmin;
+  z-index: 1;
+  text-align: center;
+}
+
+.noteHeader {
+  color: var(--med);
+  font-family: var(--fontStack);
+  margin-bottom: 0.25vmin;
+  margin-top: 1vmin;
+  font-size: 5vmin;
+  z-index: 1;
+}
+
+.greeting::after {
+  background-image: linear-gradient(var(--background), transparent);
+  content: "";
+  height: 1.5rem;
+  top: 0;
+  right: 0;
+  margin-top: 0.75rem;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+}
+
+.notepad {
+  margin-left: 0;
+  appearance: none;
+  background: transparent;
+  border: none;
+  color: inherit;
+  flex: 1 1 100%;
+  font-family: var(--fontStack) !important;
+  margin-bottom: 1.5rem;
+  font-size: 3vmin;
+  outline: none;
+  padding: 1rem;
+  resize: none;
+  width: 100%;
+  height: 100%;
+}
+
+/* Control the left side */
+.splitleft {
+  height: 100%;
+  width: 60%;
+  margin-left: 1vw;
+  position: absolute;
+  z-index: 2;
+  overflow-x: hidden;
+  left: 0;
+  top: 0;
+}
+  
+/* Control the right side */
+.splitright {
+  height: 100%;
+  width: 50%;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  right: 0;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.splitright::-webkit-scrollbar {
+  display: none;
+}
+
+.background {
+  z-index: 0;
+  height: 100vmin;
+  width: 100vmin;
+  right: -10%;
+  position: absolute;
+}
+  
